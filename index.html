@@ -3,20 +3,286 @@
   <head>
     <title>LENNI</title>
     <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
     <header>
       <div class="logo"></div>
-      <nav></nav>
-      <button></button>
+      <nav class="navigation">
+        <a href="#events">Мероприятия</a>
+        <a href="#blog">Блог</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+      <button class="btn--outline">Войти</button>
     </header>
+
     <main>
-      <div class="hero"></div>
-      <div class="about"></div>
-      <div class="events"></div>
-      <div class="blog"></div>
-      <div class="contacts"></div>
+      <div class="hero">
+        <h1 class="hero--title">Арт - пространство</h1>
+        <img class="hero--img" src="images/hero.png" alt="hero image" />
+        <h1 class="hero--title">
+          для людей, горящих сердцем и делом место для настоящего
+        </h1>
+
+        <h3 class="hero--subtitle">Я хочу</h3>
+        <span class="hero--btns">
+          <button class="btn--primary">Провести мероприятия</button>
+          <button class="btn--primary">Стать арендатором</button>
+        </span>
+      </div>
+
+      <div class="about">
+        <span class="about--title">О нас</span>
+
+        <div class="about--project">
+          <h2 class="about--project-title">Проект «Millennials»</h2>
+          <p class="about--project-text">
+            Вдохновлен молодыми идейными людьми, увлеченными творчеством,
+            эмоциями и желанием сделать мир лучше, проявить себя. У них есть
+            талант и стремление, у нас возможность помочь им воплотить их мечту
+            в реальность.
+          </p>
+          <img
+            class="about--project-img1"
+            src="images/project1.png"
+            alt="Project image 1"
+          />
+          <img
+            class="about--project-img2"
+            src="images/project2.png"
+            alt="Project image 2"
+          />
+        </div>
+
+        <div class="about--places">
+          <h2 class="about--places-title">
+            Мы предоставляем площади для вашего мероприятия
+          </h2>
+          <p class="about--places-text">
+            И оказываем помощь с организацией, если вам это нужно. Наша цель:
+            вовлечь в культурную жизнь города как можно больше людей, помочь
+            молодым ребятам сделать первые шаги к своей мечте и рассказать всем
+            о том, что их волнует.
+          </p>
+
+          <div class="about--places--example">
+            <img
+              class="about--places--example-img"
+              src="images/place1.png"
+              alt="Place image 1"
+            />
+            <p class="about--places--example-text">
+              Мы уже успешно организовали и провели более 100 проектов.
+              Посмотрите, как это было классно.
+            </p>
+						<a class="about--places--example-link" href="#">
+							Смотреть
+							<img
+								class="about--places--example-link-img"
+								src="images/arrow.png"
+								alt="Arrow image"
+						</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="events">
+				<span class="events--title">Мероприятия</span>
+
+				<div class="events--card1">
+					<img class="events--card1--img" src="images/nirvana.png" alt="Nirvana" />
+					<a class="events--card1--title">
+						<h3 class="events--card1--title-text">Собираемся и слушаем альбом Nirvana. Nirvana</h3>
+					</a>
+					<p class="events--card1--description">
+						Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий студийный материал.
+					</p>
+					<span class="events--card1--date">07.12.2026 | начало 18.00</span>
+				</div>
+
+				<div class="events--card2">
+					<img class="events--card2--img" src="images/howstuffworks.png" alt="HowStuffWorks" />
+					<a class="events--card2--title">
+						<h3 class="events--card2--title-text">
+							Есть тема, нужно обсудить с HowStuffWorks
+						</h3>
+					</a>
+					<p class="events--card2--description">
+						Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.
+					</p>
+					<span class="events--card2--date">14.12.2026 | начало 18.30</span>
+				</div>
+
+				<div class="events--card3">
+					<img class="events--card3--img" src="images/thebestofsade" alt="The Best of Sade" />
+					<a class="events--card3--title">
+						<h3 class="events--card3--title-text">Вечер | The Best of Sade</h3>
+					</a>
+					<p class="events--card3--description">
+						Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза,
+ритм-блюза и фанка.
+					</p>
+					<span class="events--card3--date">16.12.2026 | начало 20.00</span>
+				</div>
+
+				<div class="events--pagination">
+					<button class="events--pagination--btn-previous">
+						<img class="events--pagination--btn-previous--img" src="images/left-arrow.png" alt="Left Arrow" />
+					</button>
+					<img class="events--pagination--pages" src="images/pagination-pages.png" alt="Pagination Pages" />
+					<button class="events--pagination--btn-next">
+						<img class="events--pagination--btn-next--img" src="images/right-arrow.png" alt="Right Arrow" />
+					</button>
+				</div>
+			</div>
+
+      <div class="blog">
+				<span class="blog--title">Блог</span>
+
+				<div class="blog--card">
+					<img class="blog--card--img" src="images/blog-image-1.png" alt="Blog image 1" />
+
+					<div class="blog--card--content">
+						<span class="blog--card--content--data">26.11.2026</span>
+						<a class="blog--card--content--title">
+							<h4 class="blog--card--content--title-text">Фотосессия в стенах Театра драмы</h4>
+						</a>
+						<span>
+							<p class="blog--card--content--description"> Организовывая фотосессию для локального бренда одежды мы смогли воплотить все пожелания заказчика и у нас получилась отличная работа. Смотрите как это было </p>
+							<a class="blog--card--content--btn">
+								<img class="blog--card--content--btn-img" src="images/right-arrow.png" alt="Right Arrow" />
+							</a>
+						</span>
+					</div>
+				</div>
+				<div class="separator" />
+
+				<div class="blog--card">
+					<img class="blog--card--img" src="images/blog-image-2.png" alt="Blog image 2" />
+
+					<div class="blog--card--content">
+						<span class="blog--card--content--data">05.11.2026</span>
+						<a class="blog--card--content--title">
+							<h4 class="blog--card--content--title-text">Выставка VR в Томске</h4>
+						</a>
+						<span>
+							<p class="blog--card--content--description">Клуб виртуальной реальности - это другие миры. яркие эмоции. новый опыт. ... Мы предоставляем нашим клиентам лучший игровой VR-опыт в Томске.</p>
+							<a class="blog--card--content--btn">
+								<img class="blog--card--content--btn-img" src="images/right-arrow.png" alt="Right Arrow" />
+							</a>
+						</span>
+					</div>
+				</div>
+				<div class="separator" />
+
+				<div class="blog--card">
+					<img class="blog--card--img" src="images/blog-image-3.png" alt="Blog image 3" />
+
+					<div class="blog--card--content">
+						<span class="blog--card--content--data">01.11.2026</span>
+						<a class="blog--card--content--title">
+							<h4 class="blog--card--content--title-text">Rocking radio в заброшенном ангаре</h4>
+						</a>
+						<span>
+							<p class="blog--card--content--description">15 электрогенераторов, километры проводов и пару тонн света. Все это для того, чтобы организовать лучшую вечеринку года для ребят из Новосибирска.</p>
+							<a class="blog--card--content--btn">
+								<img class="blog--card--content--btn-img" src="images/right-arrow.png" alt="Right Arrow" />
+							</a>
+						</span>
+					</div>
+				</div>	
+
+				<a class="blog--link" href="#">Смотреть все</a>
+			</div>
+
+      <div class="contacts">
+				<span class="contacts--title">Контакты</span>
+
+				<div class="contacts--wrapper">
+					<div class="contacts--wrapper--cards">
+						<div>
+							<img src="images/circle.png" alt="Circle in black square" />
+							<div>
+								<h5>Томск, Красноармейская 146</h5>
+								<p>2 этаж</p>
+								<p>оф. 206</p>
+							</div>
+						</div>
+
+						<div>
+							<img src="images/house.png" alt="House in black square" />
+							<div>
+								<h5>Отдел аренды </h5>
+								<p>8 (3822) 90-72-56</p>
+								<p>idat@tusur.ru</p>
+							</div>
+						</div>
+
+						<div>
+							<img src="images/star.png" alt="Star in black square" />
+							<div>
+								<h5>Отдел мероприятий</h5>
+								<p>8 (3822) 90-72-56</p>
+								<p>idat@tusur.ru</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
     </main>
-    <footer></footer>
+
+		<section class="ended-section">
+			<span>Просто делайте, что нравится,</span>
+			<span>а мы вам поможем</span>
+		</section>
+
+		<div class="double-separator" />
+
+    <footer>
+			<div class="more">
+				<div>
+					<a href="#">Календарь мероприятий</a>
+					<a href="#">Провести мероприятие</a>
+					<a href="#">Стать арендатором</a>
+					<a href="#">Наши проекты</a>
+					<a href="#">Контакты</a>
+				</div>
+
+				<span class="more--copiright">© Millennials 2025</span>
+
+				<div class="more--docs">
+					<p>Политика конфиденциальности</p>
+					<p>Cookies</p>
+				</div>
+			</div>
+
+			<div class="socials">
+				<img src="images/vk.png" alt="VK" />
+				<img src="images/max.png" alt="Max" />
+			</div>
+
+			<div class="feedback">
+				<form class="feedback--form">
+					<label>Подпишись и будь в курсе происходящего</label>
+
+					<span class="feedback--form--field">
+						<input type="email" placeholder="Email" />
+						<button>Подписаться</button>
+					</span>
+
+					<span class="feedback--form--check-in">
+						<input type="checkbox" />
+						<p>Согласен на обработку персональных данных</p>
+					</span>
+				</form>
+
+				<div class="feedback--brand">
+					<span class="feedback--brand--title">Создание и продвижение</span>
+					<img class="feeback--brand--image" src="images/dignity-codes.png" alt="Dignity Codes" />
+				</div>
+			</div>
+		</div>
+		</footer>
   </body>
 </html>
