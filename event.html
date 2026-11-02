@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/event.css" />
+    <title>LENNI | Мероприятие</title>
+  </head>
+  <body>
+    <header class="header">
+      <img class="header__logo" src="images/logo.png" alt="Logo" />
+
+      <nav class="header__nav">
+        <a class="header__link" href="events.html">Мероприятия</a>
+        <a class="header__link" href="index.html#blog">Блог</a>
+        <a class="header__link" href="index.html#about">О нас</a>
+        <a class="header__link" href="index.html#contacts">Контакты</a>
+      </nav>
+      <button class="header__btn btn btn--outline">Войти</button>
+    </header>
+
+    <div class="breadcrumbs">
+      <p class="breadcrumbs__text">Главная / Мероприятия / Собираемся и слушаем альбом Nirvana</p>
+    </div>
+
+    <main>
+      <div class="event">
+        <h1 class="event__title">Собираемся и слушаем альбом Nirvana. Nirvana</h1>
+
+        <img
+          class="event__image"
+          src="images/events/event1.jpg"
+          alt="Мероприятие 1"
+        />
+
+        <div class="event__info">
+          <p class="event__text">
+            Это третий альбом группы, выпущенный после смерти Курта Кобейна и
+            первый, содержащий студийный материал.
+          </p>
+          <span class="event__date">07.12.2026 | начало 18.00</span>
+        </div>
+
+        <!-- Блок бронирования: схематичная сетка на Grid Layout -->
+        <div class="booking">
+          <h2 class="booking__title">Бронирование</h2>
+
+          <form class="booking__form">
+            <div class="booking__field">
+              <label class="booking__label" for="booking-name">Имя</label>
+              <input class="booking__input" id="booking-name" type="text" placeholder="Иван" />
+            </div>
+
+            <div class="booking__field">
+              <label class="booking__label" for="booking-phone">Телефон</label>
+              <input class="booking__input" id="booking-phone" type="tel" placeholder="8 (___) ___-__-__" />
+            </div>
+
+            <div class="booking__field">
+              <label class="booking__label" for="booking-email">Email</label>
+              <input class="booking__input" id="booking-email" type="email" placeholder="email@example.com" />
+            </div>
+
+            <div class="booking__field booking__field--wide">
+              <label class="booking__label" for="booking-count">Количество билетов</label>
+              <input class="booking__input" id="booking-count" type="number" min="1" value="1" />
+            </div>
+
+            <div class="booking__field booking__field--wide">
+              <span class="booking__label">Тариф</span>
+              <div class="booking__tariffs">
+                <label class="booking__tariff">
+                  <input class="booking__tariff-input" type="radio" name="tariff" checked />
+                  Light
+                </label>
+                <label class="booking__tariff">
+                  <input class="booking__tariff-input" type="radio" name="tariff" />
+                  Promo
+                </label>
+                <label class="booking__tariff">
+                  <input class="booking__tariff-input" type="radio" name="tariff" />
+                  All stars
+                </label>
+              </div>
+            </div>
+
+            <div class="booking__field booking__field--wide">
+              <label class="booking__label" for="booking-comment">Комментарий</label>
+              <textarea class="booking__textarea" id="booking-comment" placeholder="Пожелания к бронированию"></textarea>
+            </div>
+
+            <div class="booking__summary booking__field--wide">
+              <span class="booking__summary-text">Итого: 1 000 ₽</span>
+              <button class="booking__btn btn btn--primary" type="submit">Забронировать</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <div class="double-separator"></div>
+
+    <footer class="footer">
+      <div class="footer__more">
+        <div class="footer__nav">
+          <a class="footer__link" href="#">Календарь мероприятий</a>
+          <a class="footer__link" href="#">Провести мероприятие</a>
+          <a class="footer__link" href="#">Стать арендатором</a>
+          <a class="footer__link" href="#">Наши проекты</a>
+          <a class="footer__link" href="#">Контакты</a>
+        </div>
+
+        <span class="footer__copyright">© Millennials 2025</span>
+
+        <div class="footer__docs">
+          <p class="footer__docs-item">Политика конфиденциальности</p>
+          <p class="footer__docs-item">Cookies</p>
+        </div>
+      </div>
+
+      <div class="footer__socials">
+        <img class="footer__social-icon" src="images/vk.png" alt="VK" />
+        <img class="footer__social-icon" src="images/max.png" alt="Max" />
+      </div>
+    </footer>
+  </body>
+</html>
