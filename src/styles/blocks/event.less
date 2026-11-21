@@ -1,0 +1,42 @@
+.event {
+  padding: 20px 0;
+
+  &__title {
+    color: #222;
+    font-size: 32px;
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin: 16px 0 32px;
+  }
+
+  &__text {
+    margin: 0;
+    color: #444;
+    line-height: 1.6;
+  }
+
+  &__date {
+    color: @gray-muted;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .event__info {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

@@ -6,17 +6,12 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <header class="header">
-      <img class="header__logo" src="images/logo.png" alt="Logo" />
-
-      <nav class="header__nav">
-        <a class="header__link" href="#events">Мероприятия</a>
-        <a class="header__link" href="#blog">Блог</a>
-        <a class="header__link" href="#about">О нас</a>
-        <a class="header__link" href="#contacts">Контакты</a>
-      </nav>
-      <button class="header__btn btn btn__outline">Войти</button>
-    </header>
+    @@include('blocks/page-header.html', {
+      "events-link": "events.html#events",
+      "blog-link": "#blog",
+      "about-link": "#about",
+      "contacts-link": "#contacts"
+    })
 
     <main>
       <div class="hero">
@@ -28,10 +23,10 @@
 
         <h3 class="hero__subtitle">Я хочу</h3>
         <span class="hero__actions">
-          <button class="hero__btn btn btn__primary">
+            <button class="hero__btn btn btn--primary">
             Провести мероприятия
           </button>
-          <button class="hero__btn btn btn__primary">Стать арендатором</button>
+          <button class="hero__btn btn btn--primary">Стать арендатором</button>
         </span>
       </div>
 
@@ -171,104 +166,7 @@
         </div>
       </div>
 
-      <div class="blog">
-        <span class="blog__title">Блог</span>
-
-        <div class="blog__card">
-          <img
-            class="blog__card-image"
-            src="images/blog-image-1.png"
-            alt="Blog image 1"
-          />
-
-          <div class="blog__card-content">
-            <span class="blog__card-date">26.11.2026</span>
-            <a class="blog__card-title" href="#">
-              <h4 class="blog__card-title-text">
-                Фотосессия в стенах Театра драмы
-              </h4>
-            </a>
-            <div class="blog__card-body">
-              <p class="blog__card-description">
-                Организовывая фотосессию для локального бренда одежды мы смогли
-                воплотить все пожелания заказчика и у нас получилась отличная
-                работа. Смотрите как это было
-              </p>
-              <a class="blog__card-btn" href="#">
-                <img
-                  class="blog__card-btn-icon"
-                  src="images/right-arrow.png"
-                  alt="Right Arrow"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="blog__separator"></div>
-
-        <div class="blog__card">
-          <img
-            class="blog__card-image"
-            src="images/blog-image-2.png"
-            alt="Blog image 2"
-          />
-
-          <div class="blog__card-content">
-            <span class="blog__card-date">05.11.2026</span>
-            <a class="blog__card-title" href="#">
-              <h4 class="blog__card-title-text">Выставка VR в Томске</h4>
-            </a>
-            <div class="blog__card-body">
-              <p class="blog__card-description">
-                Клуб виртуальной реальности - это другие миры. яркие эмоции.
-                новый опыт. ... Мы предоставляем нашим клиентам лучший игровой
-                VR-опыт в Томске.
-              </p>
-              <a class="blog__card-btn" href="#">
-                <img
-                  class="blog__card-btn-icon"
-                  src="images/right-arrow.png"
-                  alt="Right Arrow"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="blog__separator"></div>
-
-        <div class="blog__card">
-          <img
-            class="blog__card-image"
-            src="images/blog-image-3.png"
-            alt="Blog image 3"
-          />
-
-          <div class="blog__card-content">
-            <span class="blog__card-date">01.11.2026</span>
-            <a class="blog__card-title" href="#">
-              <h4 class="blog__card-title-text">
-                Rocking radio в заброшенном ангаре
-              </h4>
-            </a>
-            <div class="blog__card-body">
-              <p class="blog__card-description">
-                15 электрогенераторов, километры проводов и пару тонн света. Все
-                это для того, чтобы организовать лучшую вечеринку года для ребят
-                из Новосибирска.
-              </p>
-              <a class="blog__card-btn" href="#">
-                <img
-                  class="blog__card-btn-icon"
-                  src="images/right-arrow.png"
-                  alt="Right Arrow"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <a class="blog__link" href="#">Смотреть все</a>
-      </div>
+      @@include('blocks/blog-listing.html')
 
       <div class="contacts">
         <span class="contacts__title">Контакты</span>
@@ -325,61 +223,6 @@
 
     <div class="double-separator"></div>
 
-    <footer class="footer">
-      <div class="footer__more">
-        <div class="footer__nav">
-          <a class="footer__link" href="#">Календарь мероприятий</a>
-          <a class="footer__link" href="#">Провести мероприятие</a>
-          <a class="footer__link" href="#">Стать арендатором</a>
-          <a class="footer__link" href="#">Наши проекты</a>
-          <a class="footer__link" href="#">Контакты</a>
-        </div>
-
-        <span class="footer__copyright">© Millennials 2025</span>
-
-        <div class="footer__docs">
-          <p class="footer__docs-item">Политика конфиденциальности</p>
-          <p class="footer__docs-item">Cookies</p>
-        </div>
-      </div>
-
-      <div class="footer__socials">
-        <img class="footer__social-icon" src="images/vk.png" alt="VK" />
-        <img class="footer__social-icon" src="images/max.png" alt="Max" />
-      </div>
-
-      <div class="footer__feedback">
-        <form class="footer__feedback-form">
-          <label class="footer__feedback-label"
-            >Подпишись и будь в курсе происходящего</label
-          >
-
-          <span class="footer__feedback-field">
-            <input
-              class="footer__feedback-input"
-              type="email"
-              placeholder="Email"
-            />
-            <button class="footer__feedback-btn">Подписаться</button>
-          </span>
-
-          <span class="footer__feedback-agreement">
-            <input class="footer__feedback-checkbox" type="checkbox" />
-            <p class="footer__feedback-text">
-              Согласен на обработку персональных данных
-            </p>
-          </span>
-        </form>
-
-        <div class="footer__brand">
-          <span class="footer__brand-title">Создание и продвижение</span>
-          <img
-            class="footer__brand-image"
-            src="images/dignity-codes.png"
-            alt="Dignity Codes"
-          />
-        </div>
-      </div>
-    </footer>
+    @@include('blocks/page-footer.html')
   </body>
 </html>

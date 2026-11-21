@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/events.css" />
+    <title>LENNI | Мероприятия</title>
+  </head>
+  <body>
+    @@include('blocks/page-header.html', {
+      "events-link": "#events",
+      "blog-link": "index.html#blog",
+      "about-link": "index.html#about",
+      "contacts-link": "index.html#contacts"
+    })
+
+    <div class="breadcrumbs">
+      <p class="breadcrumbs__text">Главная / Мероприятия</p>
+    </div>
+
+    <main>
+      <div class="events">
+        <h1 class="events__title">Мероприятия</h1>
+
+        <div class="events__cards">
+          @@include('blocks/event-card.html', {
+            "image": "images/events/event1.jpg",
+            "alt": "Мероприятие 1",
+            "title": "Собираемся и слушаем альбом Nirvana. Nirvana",
+            "description": "Это третий альбом группы, выпущенный после смерти Курта Кобейна и первый, содержащий студийный материал.",
+            "date": "07.12.2026 | начало 18.00",
+            "link": "#"
+          })
+          @@include('blocks/event-card.html', {
+            "image": "images/events/event2.jpg",
+            "alt": "Мероприятие 2",
+            "title": "Есть тема, нужно обсудить с HowStuffWorks",
+            "description": "Один из самых популярных подкастов в мире. В нём авторы объясняют, как устроены разные вещи.",
+            "date": "14.12.2026 | начало 18.30",
+            "link": "#"
+          })
+          @@include('blocks/event-card.html', {
+            "image": "images/events/event3.jpg",
+            "alt": "Мероприятие 3",
+            "title": "Вечер | The Best of Sade",
+            "description": "Музыка группы имеет эклектичный характер, сочетая в себе элементы музыки соул, джаза, ритм-блюза и фанка.",
+            "date": "16.12.2026 | начало 20.00",
+            "link": "#"
+          })
+          @@include('blocks/event-card.html', {
+            "image": "images/events/event4.jpg",
+            "alt": "Мероприятие 4",
+            "title": "Выставка Малевича в Томске",
+            "description": "Это будет самая полная выставка с 1988 года, того времени, когда впервые заговорили о Малевиче. Экспозиция займёт два этажа павильона.",
+            "date": "23.12.2026 | начало 20.00",
+            "link": "#"
+          })
+          @@include('blocks/event-card.html', {
+            "image": "images/events/event5.jpg",
+            "alt": "Мероприятие 5",
+            "title": "Мастер — класс по студийной съемке от Tatler",
+            "description": "Фотографы издания расскажут, как им удается создавать потрясающие кадры и что может испортить весь процесс.",
+            "date": "25.12.2026 | начало 13.00",
+            "link": "#"
+          })
+          @@include('blocks/event-card.html', {
+            "image": "images/events/event6.jpg",
+            "alt": "Мероприятие 6",
+            "title": "Повесилимся на славу на концерте The Hatters",
+            "description": "Российская джипси-фолк-рок группа, основанная в 2016 году в Санкт-Петербурге. В основной состав группы входят Юрий Музыченко",
+            "date": "27.12.2026 | начало 10.00",
+            "link": "#"
+          })
+        </div>
+
+        <div class="events__show-more">
+          <p class="events__show-more-text">Показать еще</p>
+          <img
+            class="arrow events__show-more-img"
+            src="images/arrow-down.png"
+            alt="Arrow down"
+          />
+        </div>
+      </div>
+
+      <div class="additional">
+        <h1 class="additional__title">Дополнительные услуги</h1>
+        <div class="additional__wrapper">
+          <p class="additional__description">
+            Перед запуском проекта, мы подготавливаем подробную смету и
+            согласуем ее с клиентом. Убедившись, что все пожеланию учтены и мы
+            можем приступать к реализациии проекта, начинается сложная, но
+            интересная работа, результатом которой будет проведение вашего
+            мероприятия на высшем уровне.
+          </p>
+
+					<table class="additional__table">
+							<tr class="additional__table-row additional__table-row--head">
+								<th class="additional__table-cell"></th>
+								<th class="additional__table-cell">Тариф «Light»</th>
+								<th class="additional__table-cell">Тариф «Promo»</th>
+								<th class="additional__table-cell">Тариф «All stars»</th>
+							</tr>
+							<tr>
+							<td>Стоимость за час</td>
+							<td>1 000 ₽</td>
+							<td>3 000 ₽</td>
+							<td>от 6 000 ₽</td>
+						</tr>
+						<tr>
+							<td>Ведущий мероприятия</td>
+							<td></td>
+							<td>
+								<img src="images/check-in.png" alt="Check In" />
+							</td>
+							<td>
+								<img src="images/check-in.png" alt="Check In" />
+							</td>
+						</tr>
+						<tr>
+							<td>Фотосъемка</td>
+							<td><img src="images/check-in.png" alt="Check In" /></td>
+							<td><img src="images/check-in.png" alt="Check In" /></td>
+							<td><img src="images/check-in.png" alt="Check In" /></td>
+						</tr>
+						<tr>
+							<td>Видеосъемка</td>
+							<td></td>
+							<td></td>
+							<td><img src="images/check-in.png" alt="Check In" /></td>
+						</tr>
+						<tr>
+							<td>Организация питания</td>
+							<td></td>
+							<td><img src="images/check-in.png" alt="Check In" /></td>
+							<td><img src="images/check-in.png" alt="Check In" /></td>
+						</tr>
+						<tr>
+							<td>Декор</td>
+							<td></td>
+							<td></td>
+							<td><img src="images/check-in.png" alt="Check In" /></td>
+						</tr>
+						<tr>
+							<td>Звуковое сопровождение</td>
+							<td></td>
+							<td><img src="images/check-in.png" alt="Check In" /></td>
+							<td><img src="images/check-in.png" alt="Check In" /></td>
+						</tr>
+						<tr>
+							<td>Дополнительное освещение</td>
+							<td></td>
+							<td></td>
+							<td><img src="images/check-in.png" alt="Check In" /></td>
+						</tr>
+						<tr>
+							<td>Клининг</td>
+							<td></td>
+							<td></td>
+							<td><img src="images/check-in.png" alt="Check In" /></td>
+						</tr>
+					</table>
+        </div>
+
+				<div class="additional__cta">
+					<h3>Я хочу:</h3>
+					<span class="additional__cta-btns">
+						<button class="btn btn--primary">Провести мероприятие</button>
+						<button class="btn btn--outline">Стать арендатором</button>
+					</span>
+				</div>
+      </div>
+
+			<div class="info">
+				<div class="info__blocks">
+					<div class="info__block">
+						<img class="info__block-icon" src="images/events/warning.png" alt="Info 1">
+						<h4 class="info__block-title">Цены</h4>
+						<p class="info__block-text">Цены, указанные на сайте носят информационный характер. Мы придерживаемся индивидуального подхода в работе с клиентом.</p>
+					</div>
+					<div class="info__block">
+						<img class="info__block-icon" src="images/events/contacts.png" alt="Info 2">
+						<h4 class="info__block-title">Контакты</h4>
+						<p class="info__block-text">Отдел организации мероприятий 
+								8 (3822) 90-72-56
+								idat@tusur.ru
+						</p>
+					</div>
+					<div class="info__block">
+						<img class="info__block-icon" src="images/events/diamond.png" alt="Info 3">
+						<h4 class="info__block-title">Преимущество</h4>
+						<p class="info__block-text">Мы имеем все возможности для того, чтобы помочь как малому бизнесу и молодым талантам, так и большим корпорациям и холдингам.</p>
+					</div>
+				</div>
+			</div>
+    </main>
+
+    <div class="double-separator"></div>
+
+    @@include('blocks/page-footer.html', { "hasFeedback": false })
+  </body>
+</html>

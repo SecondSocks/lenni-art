@@ -1,0 +1,155 @@
+.events__card {
+  margin: 16px 0;
+
+  &-image {
+    width: 100%;
+    height: auto;
+  }
+
+  &-title {
+    text-decoration: none;
+  }
+
+  &-title-text {
+    color: #222;
+  }
+
+  &-description {
+    color: @gray-text;
+    line-height: 1.5;
+  }
+
+  &-date {
+    color: @gray-muted;
+    font-size: 14px;
+  }
+}
+
+.events {
+  &__pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  &__pagination-btn {
+    border: 1px solid #999;
+    background: none;
+    cursor: pointer;
+  }
+
+  &__pagination-btn-icon {
+    display: block;
+  }
+
+  &__pagination-pages {
+    max-width: 100%;
+  }
+}
+
+.blog {
+  padding: 20px 0;
+
+  &__title {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  &__card {
+    margin: 16px 0;
+  }
+
+  &__card-image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__card-content {
+    padding: 8px 0;
+  }
+
+  &__card-date {
+    color: @gray-muted;
+    font-size: 14px;
+  }
+
+  &__card-title {
+    text-decoration: none;
+  }
+
+  &__card-title-text {
+    color: #222;
+  }
+
+  &__card-body {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &__card-description {
+    color: @gray-text;
+    line-height: 1.5;
+  }
+
+  &__card-btn {
+    flex-shrink: 0;
+  }
+
+  &__card-btn-icon {
+    display: block;
+  }
+
+  &__separator {
+    height: 1px;
+    margin: 16px 0;
+    background-color: @border-color;
+  }
+
+  &__link {
+    color: @black;
+    text-decoration: underline;
+  }
+}
+
+.contacts {
+  padding: 20px 0;
+
+  &__title {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  &__cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__card {
+    display: flex;
+    gap: 12px;
+  }
+
+  &__card-icon {
+    flex-shrink: 0;
+  }
+
+  &__card-title {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  &__card-text {
+    margin: 4px 0 0;
+    color: @gray-text;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacts__cards {
+    flex-direction: column;
+  }
+}

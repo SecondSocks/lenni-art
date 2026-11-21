@@ -1,0 +1,43 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 150px;
+  background-color: #e0e0e0;
+
+  &__logo {
+    max-height: 100px;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+  }
+
+  &__link {
+    color: #333;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 1340px) {
+  .header {
+    min-height: 110px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 10px 0;
+
+    &__nav {
+      gap: 20px;
+    }
+  }
+}

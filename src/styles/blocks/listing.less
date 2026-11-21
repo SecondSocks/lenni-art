@@ -1,0 +1,87 @@
+.hero {
+  padding: 40px 0;
+  text-align: center;
+
+  &__title {
+    color: #333;
+  }
+
+  &__subtitle {
+    margin: 24px 0 16px;
+    color: @gray-text;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &__actions {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+.about {
+  padding: 20px 0;
+
+  &__title {
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  &__project,
+  &__places,
+  &__example {
+    margin: 10px 0;
+  }
+
+  &__project-title,
+  &__places-title {
+    font-size: 22px;
+  }
+
+  &__project-text,
+  &__places-text {
+    color: #444;
+    line-height: 1.5;
+  }
+
+  &__project-image,
+  &__example-image {
+    max-width: 45%;
+  }
+
+  &__project-image--first {
+    margin-right: 16px;
+  }
+
+  &__project-image--second {
+    margin-left: 16px;
+  }
+
+  &__example-text {
+    color: #444;
+  }
+
+  &__example-link {
+    color: @black;
+    text-decoration: underline;
+  }
+
+  &__example-link-icon {
+    vertical-align: middle;
+  }
+}
+
+.slogan {
+  padding: 30px 0;
+  text-align: center;
+
+  &__line {
+    display: block;
+    color: #333;
+  }
+}
