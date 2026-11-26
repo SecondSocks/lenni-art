@@ -20,6 +20,233 @@
     margin: 16px 0 32px;
   }
 
+  &__booking {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.6fr);
+    grid-template-areas:
+      "selection map"
+      "summary info";
+    align-items: start;
+    gap: 32px 48px;
+    margin: 48px 0;
+    padding: 24px;
+  }
+
+  &__booking-table {
+    display: contents;
+  }
+
+  &__booking-selection {
+    grid-area: selection;
+  }
+
+  &__booking-summary {
+    grid-area: summary;
+  }
+
+  &__restaurant-map {
+    grid-area: map;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: auto repeat(3, minmax(120px, auto));
+    grid-template-areas:
+      ". . stage-title . ."
+      "table-10 table-9 dance-floor table-1 table-2"
+      "table-11 table-8 table-7 table-4 table-3"
+      ". . table-6 table-5 .";
+    align-items: center;
+    justify-items: center;
+    gap: 20px 12px;
+    min-width: 0;
+    padding: 8px;
+    border: 1px solid @border-color;
+    text-align: center;
+  }
+
+  &__restaurant-map h3 {
+    grid-area: stage-title;
+    margin: 0;
+  }
+
+  &__restaurant-map-stage {
+    grid-area: dance-floor;
+  }
+
+  &__restaurant-map-table--1 {
+    grid-area: table-1;
+  }
+  &__restaurant-map-table--2 {
+    grid-area: table-2;
+  }
+  &__restaurant-map-table--3 {
+    grid-area: table-3;
+  }
+  &__restaurant-map-table--4 {
+    grid-area: table-4;
+  }
+  &__restaurant-map-table--5 {
+    grid-area: table-5;
+  }
+  &__restaurant-map-table--6 {
+    grid-area: table-6;
+  }
+  &__restaurant-map-table--7 {
+    grid-area: table-7;
+  }
+  &__restaurant-map-table--8 {
+    grid-area: table-8;
+  }
+  &__restaurant-map-table--9 {
+    grid-area: table-9;
+  }
+  &__restaurant-map-table--10 {
+    grid-area: table-10;
+  }
+  &__restaurant-map-table--11 {
+    grid-area: table-11;
+  }
+
+  &__booking-info {
+    grid-area: info;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: end;
+    align-items: end;
+    gap: 24px;
+    min-width: 0;
+  }
+
+  &__booking-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin: 20px 0 32px;
+  }
+
+  &__booking-form-item {
+    display: flex;
+    min-height: 54px;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px;
+    text-align: center;
+
+    p {
+      margin: 0;
+    }
+
+    input {
+      margin: 0;
+    }
+  }
+
+  &__booking-form-item.premium-table {
+    border-color: @red;
+  }
+
+  &__booking-form-item.booked {
+    background-color: @gray;
+  }
+
+  &__booking-tickets-title,
+  &__booking-info h5 {
+    margin: 0 0 12px;
+  }
+
+  &__booking-premium-tickets,
+  &__booking-basic-tickets,
+  &__booking-total {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 10px 0;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__booking-total {
+    margin-bottom: 20px;
+    font-weight: 700;
+    display: flex;
+
+    span {
+      width: 100%;
+    }
+
+    .left {
+      text-align: right;
+    }
+
+    .right {
+      text-align: left;
+    }
+  }
+
+  &__booking-btn {
+    width: 100%;
+  }
+
+  &__booking-info-price,
+  &__booking-info-note {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    h5 {
+      text-align: right;
+    }
+
+    margin-bottom: 24px;
+  }
+
+  &__booking-info-price-item,
+  &__booking-info-note-item {
+    display: flex;
+    gap: 12px;
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .red-square,
+  .black-square,
+  .gray-circle,
+  .two-circles {
+    display: block;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+  }
+
+  .red-square {
+    background-color: @red;
+  }
+
+  .black-square {
+    background-color: @black;
+  }
+
+  .gray-circle,
+  .two-circles {
+    border-radius: 50%;
+  }
+
+  .gray-circle {
+    background-color: @gray-dark;
+  }
+
+  .two-circles {
+    border: 1px solid @black;
+    box-shadow:
+      7px 0 0 -1px @white,
+      8px 0 0 0 @red;
+  }
+
   &__text {
     margin: 0;
     color: #444;
@@ -38,5 +265,36 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 8px;
+  }
+
+  .event__booking {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "selection"
+      "map"
+      "summary"
+      "info";
+    gap: 24px;
+    margin: 32px 0;
+    padding: 16px;
+  }
+
+  .event__restaurant-map {
+    gap: 12px 4px;
+  }
+
+  .event__booking-info {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .event__booking {
+    grid-template-columns: minmax(240px, 0.8fr) minmax(0, 1.4fr);
+  }
+
+  .event__restaurant-map {
+    grid-template-rows: auto repeat(3, minmax(100px, auto));
+    gap: 16px 8px;
   }
 }

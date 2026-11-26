@@ -1,16 +1,19 @@
 .events {
-  padding: 20px 0;
+  padding: 32px 0;
 
   &__title {
+    margin: 0;
     color: #222;
-    font-size: 32px;
+    font-size: 40px;
+    line-height: 1.2;
   }
 
   &__cards {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 24px;
-    margin: 24px 0;
+    align-items: stretch;
+    gap: 32px 24px;
+    margin: 40px 0;
   }
 
   &__show-more {
@@ -23,6 +26,7 @@
   }
 
   &__show-more-text {
+    margin: 0;
     color: #333;
     font-weight: bold;
   }
@@ -34,20 +38,26 @@
 }
 
 .card {
+  min-width: 0;
   display: flex;
   flex-direction: column;
-  padding: 12px;
-  border: 1px solid @border-color;
+  padding: 0 0 20px;
+  border-bottom: 1px solid @border-color;
 
   &__img {
+    display: block;
     width: 100%;
-    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
   }
 
   &__title {
-    margin: 12px 0 8px;
-    color: #222;
-    font-size: 18px;
+    display: block;
+    margin: 20px 0 12px;
+    color: @black;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
     text-decoration: none;
 
     &:hover {
@@ -57,13 +67,15 @@
 
   &__description {
     flex-grow: 1;
-    margin: 0 0 8px;
+    margin: 0 0 16px;
     color: @gray-text;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
   }
 
   &__date {
+    display: block;
+    margin-top: auto;
     color: @gray-muted;
     font-size: 14px;
   }
@@ -165,6 +177,19 @@
 }
 
 @media (max-width: 768px) {
+  .events {
+    padding: 24px 0;
+
+    &__title {
+      font-size: 32px;
+    }
+
+    &__cards {
+      gap: 24px;
+      margin: 28px 0;
+    }
+  }
+
   .events__cards {
     grid-template-columns: 1fr;
   }
