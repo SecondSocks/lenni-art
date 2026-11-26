@@ -6,6 +6,27 @@
     font-size: 32px;
   }
 
+  &__section-title {
+    margin: 28px 0 14px;
+    color: #222;
+    font-size: 24px;
+    line-height: 1.3;
+  }
+
+  &__program ul,
+  &__songs-list {
+    margin: 0;
+    padding-left: 24px;
+    line-height: 1.8;
+  }
+
+  &__description {
+    max-width: 900px;
+    margin: 32px 0;
+
+    p { color: #444; line-height: 1.7; }
+  }
+
   &__image {
     display: block;
     width: 100%;
@@ -117,38 +138,50 @@
   }
 
   &__booking-form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
     margin: 20px 0 32px;
   }
 
   &__booking-form-item {
     display: flex;
-    min-height: 54px;
+    min-height: 44px;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 8px;
-    text-align: center;
-
-    p {
-      margin: 0;
-    }
+    gap: 8px;
+    padding: 7px 9px;
+    border: 1px solid #bbb;
+    cursor: pointer;
 
     input {
       margin: 0;
+      accent-color: @red;
     }
   }
 
   &__booking-form-item.premium-table {
     border-color: @red;
+    background: #fff7f5;
   }
 
   &__booking-form-item.booked {
     background-color: @gray;
+    color: #777;
+    cursor: not-allowed;
   }
+
+  &__booking-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    color: #555;
+    font-size: 13px;
+  }
+
+  &__booking-legend > span { display: inline-flex; align-items: center; gap: 7px; }
+  &__legend-swatch { width: 14px; height: 14px; border: 1px solid #999; background: #fff; }
+  &__legend-swatch--premium { border-color: @red; background: #fff7f5; }
+  &__legend-swatch--booked { border-color: @gray-dark; background: @gray; }
 
   &__booking-tickets-title,
   &__booking-info h5 {
@@ -282,6 +315,8 @@
   .event__restaurant-map {
     gap: 12px 4px;
   }
+
+  .event__booking-form { grid-template-columns: 1fr; }
 
   .event__booking-info {
     grid-template-columns: minmax(0, 1fr);

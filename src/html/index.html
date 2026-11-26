@@ -20,7 +20,7 @@
 
         <h3 class="hero__subtitle">Я хочу</h3>
         <span class="hero__actions">
-          <button class="hero__btn btn btn--primary">
+          <button class="hero__btn btn btn--primary" data-popup-open>
             Провести мероприятия
           </button>
           <button class="hero__btn btn btn--primary">Стать арендатором</button>
@@ -221,5 +221,61 @@
     <div class="double-separator"></div>
 
     @@include('blocks/page-footer.html')
+    @@include('blocks/event-pp.html')
+    <script>
+      (() => {
+        const popup = document.querySelector('#event-popup');
+        document.querySelectorAll('[data-popup-open]').forEach((button) => button.addEventListener('click', () => {
+          popup.hidden = false;
+          popup.querySelector('input[name="name"]').focus();
+        }));
+        popup.querySelectorAll('[data-popup-close]').forEach((button) => button.addEventListener('click', () => { popup.hidden = true; }));
+
+        const dateInput = popup.querySelector('.event-popup__date-input');
+        const calendar = popup.querySelector('.event-popup__calendar');
+        const calendarToggle = popup.querySelector('.event-popup__calendar-toggle');
+        const monthLabel = popup.querySelector('.event-popup__calendar-month');
+        const daysContainer = popup.querySelector('[data-calendar-days]');
+        const monthNames = new Intl.DateTimeFormat('ru-RU', { month: 'long', year: 'numeric' });
+        let displayedMonth = new Date();
+        displayedMonth.setDate(1);
+
+        const renderCalendar = () => {
+          monthLabel.textContent = monthNames.format(displayedMonth);
+          daysContainer.replaceChildren();
+          const year = displayedMonth.getFullYear();
+          const month = displayedMonth.getMonth();
+          const offset = (new Date(year, month, 1).getDay() + 6) % 7;
+          const dayCount = new Date(year, month + 1, 0).getDate();
+          for (let index = 0; index < offset; index += 1) daysContainer.append(document.createElement('span'));
+          for (let day = 1; day <= dayCount; day += 1) {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.textContent = day;
+            button.addEventListener('click', () => {
+              dateInput.value = `${String(day).padStart(2, '0')}.${String(month + 1).padStart(2, '0')}.${String(year).slice(-2)}`;
+              calendar.hidden = true;
+              calendarToggle.setAttribute('aria-expanded', 'false');
+              dateInput.focus();
+            });
+            daysContainer.append(button);
+          }
+        };
+        renderCalendar();
+        calendarToggle.addEventListener('click', () => {
+          calendar.hidden = !calendar.hidden;
+          calendarToggle.setAttribute('aria-expanded', String(!calendar.hidden));
+        });
+        popup.querySelector('.event-popup__calendar-prev').addEventListener('click', () => {
+          displayedMonth = new Date(displayedMonth.getFullYear(), displayedMonth.getMonth() - 1, 1);
+          renderCalendar();
+        });
+        popup.querySelector('.event-popup__calendar-next').addEventListener('click', () => {
+          displayedMonth = new Date(displayedMonth.getFullYear(), displayedMonth.getMonth() + 1, 1);
+          renderCalendar();
+        });
+        popup.querySelector('form').addEventListener('submit', (event) => event.preventDefault());
+      })();
+    </script>
   </body>
 </html>

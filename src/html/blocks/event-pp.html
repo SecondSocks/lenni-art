@@ -1,0 +1,91 @@
+<section class="event-popup" id="event-popup" aria-labelledby="event-popup-title" hidden>
+  <div class="event-popup__backdrop" data-popup-close></div>
+  <div class="event-popup__dialog" role="dialog" aria-modal="true" aria-labelledby="event-popup-title">
+    <div class="event-popup__topline">
+      <h2 class="event-popup__title" id="event-popup-title">
+        Заполните форму<br />и мы подберем площадку
+      </h2>
+      <button class="event-popup__close" type="button" aria-label="Закрыть форму" data-popup-close>×</button>
+    </div>
+
+    <form class="event-popup__form">
+      <div class="event-popup__column">
+        <fieldset class="event-popup__group">
+          <legend class="event-popup__legend">Формат мероприятия:</legend>
+          <label class="event-popup__radio"><input type="radio" name="format" value="masterclass" /><span>Мастер-класс/семинар</span></label>
+          <label class="event-popup__radio"><input type="radio" name="format" value="concert" checked /><span>Концерт/выступление</span></label>
+          <label class="event-popup__radio"><input type="radio" name="format" value="exhibition" /><span>Выставка/показ</span></label>
+          <label class="event-popup__radio"><input type="radio" name="format" value="other" /><span>Другое</span></label>
+        </fieldset>
+
+      </div>
+
+      <div class="event-popup__column">
+        <label class="event-popup__field event-popup__field--select">
+          <span class="event-popup__legend">Планируемое количество посетителей:</span>
+          <select name="visitors" required>
+            <option value="up-to-20">до 20 человек</option>
+            <option value="20-50">от 20 до 50 человек</option>
+            <option value="50-100">от 50 до 100 человек</option>
+            <option value="over-100">более 100 человек</option>
+          </select>
+        </label>
+        <fieldset class="event-popup__group event-popup__date-group">
+          <legend class="event-popup__legend">Дата проведения:</legend>
+          <div class="event-popup__date-control">
+            <input class="event-popup__date-input" type="text" name="date" inputmode="numeric" placeholder="ДД.ММ.ГГ" pattern="[0-9]{2}\.[0-9]{2}\.[0-9]{2}" aria-label="Дата проведения, день месяц год" autocomplete="off" required />
+            <button class="event-popup__calendar-toggle" type="button" aria-label="Открыть календарь" aria-expanded="false">▦</button>
+          </div>
+          <div class="event-popup__calendar" aria-label="Выберите дату" hidden>
+            <div class="event-popup__calendar-head">
+              <button type="button" class="event-popup__calendar-prev" aria-label="Предыдущий месяц">‹</button>
+              <span class="event-popup__calendar-month"></span>
+              <button type="button" class="event-popup__calendar-next" aria-label="Следующий месяц">›</button>
+            </div>
+            <div class="event-popup__calendar-grid event-popup__calendar-grid--week">
+              <span>пн</span><span>вт</span><span>ср</span><span>чт</span><span>пт</span><span>сб</span><span>вс</span>
+            </div>
+            <div class="event-popup__calendar-grid" data-calendar-days></div>
+          </div>
+        </fieldset>
+      </div>
+
+      <fieldset class="event-popup__group event-popup__contacts">
+        <legend class="event-popup__legend">Контактные данные:</legend>
+        <div class="event-popup__contact-grid">
+          <label class="event-popup__field">
+            <span>Имя*</span>
+            <input type="text" name="name" placeholder="Имя" autocomplete="given-name" required />
+          </label>
+          <label class="event-popup__field">
+            <span>Фамилия*</span>
+            <input type="text" name="surname" placeholder="Фамилия" autocomplete="family-name" required />
+          </label>
+          <label class="event-popup__field">
+            <span>Телефон*</span>
+            <input type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required />
+          </label>
+          <label class="event-popup__field">
+            <span>Email*</span>
+            <input type="email" name="email" placeholder="Электронная почта" autocomplete="email" required />
+          </label>
+        </div>
+      </fieldset>
+
+      <label class="event-popup__field event-popup__field--wide">
+        <span class="event-popup__legend">Есть пожелания? Напишите нам:</span>
+        <textarea name="message" rows="5"></textarea>
+      </label>
+
+      <label class="event-popup__agreement">
+        <input type="checkbox" name="agreement" required checked />
+        <span>Я соглашаюсь с пользовательским соглашением и с политикой использования персональных данных</span>
+      </label>
+
+      <div class="event-popup__actions">
+        <button class="event-popup__submit" type="submit">Отправить</button>
+        <button class="event-popup__close-link" type="button" data-popup-close>Закрыть</button>
+      </div>
+    </form>
+  </div>
+</section>

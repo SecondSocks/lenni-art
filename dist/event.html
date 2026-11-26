@@ -50,9 +50,7 @@
       </section>
 
       <div class="event__program">
-        <caption class="event__program-caption">
-          Программа мероприятия
-        </caption>
+        <h2 class="event__section-title">Программа мероприятия</h2>
         <ul>
           <li>20:15 — Приветствие гостей</li>
           <li>20:30 — Первая подача блюд | Салаты</li>
@@ -66,7 +64,7 @@
       </div>
 
       <div class="event__description">
-        <h3 class="event__description">The Best Of Sade</h3>
+        <h2 class="event__section-title">The Best Of Sade</h2>
         <p>
           Первый альбом-компиляция Sade, выпущенный в 1994 году. Он содержит 9
           треков, включая самые популярные хиты группы, раритеты и их любимые
@@ -98,58 +96,69 @@
             <h5 class="event_booking-title">Забронировать столик</h5>
 
             <form class="event__booking-form">
-              <span class="event__booking-form-item premium-table">
-                <input type="checkbox" />
-                <p>1 стол</p>
-              </span>
-              <span class="event__booking-form-item">
-                <input type="checkbox" />
-                <p>2 стол</p>
-              </span>
-              <span class="event__booking-form-item">
-                <input type="checkbox" />
-                <p>3 стол</p>
-              </span>
-              <span class="event__booking-form-item premium-table">
-                <input type="checkbox" />
-                <p>4 стол</p>
-              </span>
-              <span class="event__booking-form-item booked">
-                <input type="checkbox" />
-                <p>5 стол</p>
-              </span>
-              <span class="event__booking-form-item">
-                <input type="checkbox" />
-                <p>6 стол</p>
-              </span>
-              <span class="event__booking-form-item premium-table">
-                <input type="checkbox" />
-                <p>7 стол</p>
-              </span>
-              <span class="event__booking-form-item premium-table">
-                <input type="checkbox" />
-                <p>8 стол</p>
-              </span>
-              <span class="event__booking-form-item premium-table">
-                <input type="checkbox" />
-                <p>9 стол</p>
-              </span>
-              <span class="event__booking-form-item">
-                <input type="checkbox" />
-                <p>10 стол</p>
-              </span>
-              <span class="event__booking-form-item">
-                <input type="checkbox" />
-                <p>11 стол</p>
-              </span>
+              <label class="event__booking-form-item premium-table">
+                <input type="checkbox" name="tables[]" value="1" />
+                <span>1 стол</span>
+              </label>
+              <label class="event__booking-form-item">
+                <input type="checkbox" name="tables[]" value="2" />
+                <span>2 стол</span>
+              </label>
+              <label class="event__booking-form-item">
+                <input type="checkbox" name="tables[]" value="3" />
+                <span>3 стол</span>
+              </label>
+              <label class="event__booking-form-item premium-table">
+                <input type="checkbox" name="tables[]" value="4" />
+                <span>4 стол</span>
+              </label>
+              <label class="event__booking-form-item booked">
+                <input type="checkbox" name="tables[]" value="5" disabled />
+                <span>5 стол — занято</span>
+              </label>
+              <label class="event__booking-form-item">
+                <input type="checkbox" name="tables[]" value="6" />
+                <span>6 стол</span>
+              </label>
+              <label class="event__booking-form-item premium-table">
+                <input type="checkbox" name="tables[]" value="7" />
+                <span>7 стол</span>
+              </label>
+              <label class="event__booking-form-item premium-table">
+                <input type="checkbox" name="tables[]" value="8" />
+                <span>8 стол</span>
+              </label>
+              <label class="event__booking-form-item premium-table">
+                <input type="checkbox" name="tables[]" value="9" />
+                <span>9 стол</span>
+              </label>
+              <label class="event__booking-form-item">
+                <input type="checkbox" name="tables[]" value="10" />
+                <span>10 стол</span>
+              </label>
+              <label class="event__booking-form-item">
+                <input type="checkbox" name="tables[]" value="11" />
+                <span>11 стол</span>
+              </label>
             </form>
+            <div class="event__booking-legend" aria-label="Легенда мест">
+              <span>
+                <i class="event__legend-swatch event__legend-swatch--premium"></i>Премиум стол
+              </span>
+              <span>
+                <i class="event__legend-swatch event__legend-swatch--available"></i>Доступен
+              </span>
+              <span>
+                <i class="event__legend-swatch event__legend-swatch--booked"></i>Забронирован
+              </span>
+            </div>
           </div>
 
           <div class="event__booking-summary">
             <h5 class="event__booking-tickets-title">
               Ваши пригласительные билеты
             </h5>
-            <div class="event_booking-tickets">
+            <div class="event__booking-tickets">
               <span class="event__booking-premium-tickets">
                 <p>9 шт. | 1400 ₽</p>
                 <p>
@@ -203,7 +212,7 @@
             </div>
           </div>
 
-          <div class="event__booking-info-note">
+          <div class="event__booking˝-info-note">
             <h5>Примечание</h5>
             <div class="event__booking-info-note-item">
               <span class="two-circles" aria-hidden="true"></span>

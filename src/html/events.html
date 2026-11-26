@@ -95,77 +95,33 @@
           </p>
 
 					<table class="additional__table">
+						<caption class="visually-hidden">Сравнение тарифов дополнительных услуг</caption>
+						<thead>
 							<tr class="additional__table-row additional__table-row--head">
-								<th class="additional__table-cell"></th>
-								<th class="additional__table-cell">Тариф «Light»</th>
-								<th class="additional__table-cell">Тариф «Promo»</th>
-								<th class="additional__table-cell">Тариф «All stars»</th>
+								<th class="additional__table-cell" scope="col">Услуга</th>
+								<th class="additional__table-cell" scope="col">Тариф «Light»</th>
+								<th class="additional__table-cell" scope="col">Тариф «Promo»</th>
+								<th class="additional__table-cell" scope="col">Тариф «All stars»</th>
 							</tr>
-							<tr>
-							<td>Стоимость за час</td>
-							<td>1 000 ₽</td>
-							<td>3 000 ₽</td>
-							<td>от 6 000 ₽</td>
-						</tr>
-						<tr>
-							<td>Ведущий мероприятия</td>
-							<td></td>
-							<td>
-								<img src="images/check-in.png" alt="Check In" />
-							</td>
-							<td>
-								<img src="images/check-in.png" alt="Check In" />
-							</td>
-						</tr>
-						<tr>
-							<td>Фотосъемка</td>
-							<td><img src="images/check-in.png" alt="Check In" /></td>
-							<td><img src="images/check-in.png" alt="Check In" /></td>
-							<td><img src="images/check-in.png" alt="Check In" /></td>
-						</tr>
-						<tr>
-							<td>Видеосъемка</td>
-							<td></td>
-							<td></td>
-							<td><img src="images/check-in.png" alt="Check In" /></td>
-						</tr>
-						<tr>
-							<td>Организация питания</td>
-							<td></td>
-							<td><img src="images/check-in.png" alt="Check In" /></td>
-							<td><img src="images/check-in.png" alt="Check In" /></td>
-						</tr>
-						<tr>
-							<td>Декор</td>
-							<td></td>
-							<td></td>
-							<td><img src="images/check-in.png" alt="Check In" /></td>
-						</tr>
-						<tr>
-							<td>Звуковое сопровождение</td>
-							<td></td>
-							<td><img src="images/check-in.png" alt="Check In" /></td>
-							<td><img src="images/check-in.png" alt="Check In" /></td>
-						</tr>
-						<tr>
-							<td>Дополнительное освещение</td>
-							<td></td>
-							<td></td>
-							<td><img src="images/check-in.png" alt="Check In" /></td>
-						</tr>
-						<tr>
-							<td>Клининг</td>
-							<td></td>
-							<td></td>
-							<td><img src="images/check-in.png" alt="Check In" /></td>
-						</tr>
+						</thead>
+						<tbody>
+							<tr><th scope="row">Стоимость за час</th><td>1 000 ₽</td><td>3 000 ₽</td><td>от 6 000 ₽</td></tr>
+							<tr><th scope="row">Ведущий мероприятия</th><td>—</td><td><img src="images/check-in.png" alt="Включено" /></td><td><img src="images/check-in.png" alt="Включено" /></td></tr>
+							<tr><th scope="row">Фотосъемка</th><td><img src="images/check-in.png" alt="Включено" /></td><td><img src="images/check-in.png" alt="Включено" /></td><td><img src="images/check-in.png" alt="Включено" /></td></tr>
+							<tr><th scope="row">Видеосъемка</th><td>—</td><td>—</td><td><img src="images/check-in.png" alt="Включено" /></td></tr>
+							<tr><th scope="row">Организация питания</th><td>—</td><td><img src="images/check-in.png" alt="Включено" /></td><td><img src="images/check-in.png" alt="Включено" /></td></tr>
+							<tr><th scope="row">Декор</th><td>—</td><td>—</td><td><img src="images/check-in.png" alt="Включено" /></td></tr>
+							<tr><th scope="row">Звуковое сопровождение</th><td>—</td><td><img src="images/check-in.png" alt="Включено" /></td><td><img src="images/check-in.png" alt="Включено" /></td></tr>
+							<tr><th scope="row">Дополнительное освещение</th><td>—</td><td>—</td><td><img src="images/check-in.png" alt="Включено" /></td></tr>
+							<tr><th scope="row">Клининг</th><td>—</td><td>—</td><td><img src="images/check-in.png" alt="Включено" /></td></tr>
+						</tbody>
 					</table>
         </div>
 
 				<div class="additional__cta">
 					<h3>Я хочу:</h3>
 					<span class="additional__cta-btns">
-						<button class="btn btn--primary">Провести мероприятие</button>
+          <button class="btn btn--primary" data-popup-open>Провести мероприятие</button>
 						<button class="btn btn--outline">Стать арендатором</button>
 					</span>
 				</div>
@@ -198,5 +154,61 @@
     <div class="double-separator"></div>
 
     @@include('blocks/page-footer.html', { "hasFeedback": false })
+    @@include('blocks/event-pp.html')
+    <script>
+      (() => {
+        const popup = document.querySelector('#event-popup');
+        document.querySelectorAll('[data-popup-open]').forEach((button) => button.addEventListener('click', () => {
+          popup.hidden = false;
+          popup.querySelector('input[name="name"]').focus();
+        }));
+        popup.querySelectorAll('[data-popup-close]').forEach((button) => button.addEventListener('click', () => { popup.hidden = true; }));
+
+        const dateInput = popup.querySelector('.event-popup__date-input');
+        const calendar = popup.querySelector('.event-popup__calendar');
+        const calendarToggle = popup.querySelector('.event-popup__calendar-toggle');
+        const monthLabel = popup.querySelector('.event-popup__calendar-month');
+        const daysContainer = popup.querySelector('[data-calendar-days]');
+        const monthNames = new Intl.DateTimeFormat('ru-RU', { month: 'long', year: 'numeric' });
+        let displayedMonth = new Date();
+        displayedMonth.setDate(1);
+
+        const renderCalendar = () => {
+          monthLabel.textContent = monthNames.format(displayedMonth);
+          daysContainer.replaceChildren();
+          const year = displayedMonth.getFullYear();
+          const month = displayedMonth.getMonth();
+          const offset = (new Date(year, month, 1).getDay() + 6) % 7;
+          const dayCount = new Date(year, month + 1, 0).getDate();
+          for (let index = 0; index < offset; index += 1) daysContainer.append(document.createElement('span'));
+          for (let day = 1; day <= dayCount; day += 1) {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.textContent = day;
+            button.addEventListener('click', () => {
+              dateInput.value = `${String(day).padStart(2, '0')}.${String(month + 1).padStart(2, '0')}.${String(year).slice(-2)}`;
+              calendar.hidden = true;
+              calendarToggle.setAttribute('aria-expanded', 'false');
+              dateInput.focus();
+            });
+            daysContainer.append(button);
+          }
+        };
+        renderCalendar();
+        calendarToggle.addEventListener('click', () => {
+          calendar.hidden = !calendar.hidden;
+          calendarToggle.setAttribute('aria-expanded', String(!calendar.hidden));
+        });
+        popup.querySelector('.event-popup__calendar-prev').addEventListener('click', () => {
+          displayedMonth = new Date(displayedMonth.getFullYear(), displayedMonth.getMonth() - 1, 1);
+          renderCalendar();
+        });
+        popup.querySelector('.event-popup__calendar-next').addEventListener('click', () => {
+          displayedMonth = new Date(displayedMonth.getFullYear(), displayedMonth.getMonth() + 1, 1);
+          renderCalendar();
+        });
+        popup.querySelector('form').addEventListener('submit', (event) => event.preventDefault());
+      })();
+    </script>
   </body>
 </html>
